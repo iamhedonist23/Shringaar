@@ -1,5 +1,6 @@
 # Shringaar ✨
 
+
 ### Elegance in Every Detail
 
 Shringaar is a modern imitation jewellery e-commerce website designed to showcase elegant, stylish, and affordable jewellery collections. With a clean interface, beautiful product imagery, and a seamless browsing experience, Shringaar helps customers discover jewellery for everyday wear, celebrations, and special occasions.

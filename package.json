@@ -1,0 +1,73 @@
+{
+  "name": "shringaar",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "firebase emulators:exec --only firestore,storage --project shringaar-939e1 --import=.firebase/local-data --export-on-exit=.firebase/local-data \"next dev\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "legacy:db:generate": "prisma generate",
+    "legacy:db:validate": "prisma validate",
+    "legacy:db:migrate": "prisma migrate dev",
+    "legacy:db:deploy": "prisma migrate deploy",
+    "legacy:db:seed": "prisma db seed",
+    "legacy:db:studio": "prisma studio",
+    "firebase:admin:claim": "tsx scripts/set-admin-claim.ts",
+    "firebase:import:postgres": "tsx scripts/import-postgres-to-firestore.ts",
+    "firebase:emulator:firestore": "firebase emulators:start --only firestore,storage --project shringaar-939e1 --import=.firebase/local-data --export-on-exit=.firebase/local-data",
+    "test": "tsx --tsconfig tests/tsconfig.test.json --test tests/*.test.ts",
+    "test:integration": "tsx --tsconfig tests/tsconfig.test.json --test tests/*.integration.test.ts",
+    "test:e2e": "playwright test e2e",
+    "test:sanity": "playwright test tests/sanity.spec.ts --timeout=900000",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@tanstack/react-query": "^5.59.20",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "firebase": "^13.1.0",
+    "firebase-admin": "^14.5.0",
+    "framer-motion": "^11.11.11",
+    "lottie-react": "^2.4.0",
+    "lucide-react": "^0.468.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^2.5.4",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.20.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^16.6.1",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.3",
+    "firebase-tools": "^15.34.1",
+    "lighthouse": "^13.5.0",
+    "pg": "^8.23.1",
+    "postcss": "^8.5.31",
+    "prisma": "^7.10.1",
+    "tailwindcss": "^3.4.15",
+    "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.3"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.14.6"
+  }
+}
